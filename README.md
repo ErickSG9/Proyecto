@@ -2,4 +2,4 @@
 Exposición de sensores, servo motor
 
 
-![](descarga.jpg)
+![](Imagenes/descarga.jpg)
