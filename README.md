@@ -1,6 +1,6 @@
 # **SERVOMOTORES**
 _A continuación se presentara una breve explicación acerca del funcionamiento o funciones del componente eléctrico "servomotor"_
-![](https://www.tijuana.tecnm.mx/wp-content/uploads/2014/11/Heading-Ing-sistemas-768x252.png)
+![](Imagenes/TEC.png)
 ## *¿Qué es un servomotor?*
 >Es un actuador rotativo o lineal que permite lograr un control preciso en cuanto a posición angular, aceleración y velocidad del eje, capacidades que un motor normal no tiene.
 
