@@ -1,6 +1,6 @@
 # SERVOMOTORES
 A continuación se presentara una breve explicación acerca del funcionamiento o funciones del componente eléctrico "servomotor"  
-![imagen_2023-01-04_175524046|50](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.330ohms.com%2Fproducts%2Fmicro-servo-de-180-grados-sg90&psig=AOvVaw3SF0gtZ-HZV1tGmOVHpuQg&ust=1695093342131000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKDuuPSYs4EDFQAAAAAdAAAAABA)
+![(Imagenes/ServoJPG.jpg)
 
 
 
