@@ -3,6 +3,7 @@
 ![](Imagenes/Hola.jpg)
 
 ## Código
+
 ```python
 # Importacion de las librerias
 import machine
