@@ -4,6 +4,7 @@
 
 ## Código
 ```python
+# Importacion de las librerias
 import machine
 import ssd1306
 
