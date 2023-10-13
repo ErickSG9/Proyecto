@@ -24,4 +24,4 @@ oled.text("Hola Mundo", 0, 0)
 
 # Actualiza la pantalla para mostrar el texto
 oled.show()
-´´´
+```
