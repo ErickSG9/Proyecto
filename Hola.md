@@ -3,7 +3,7 @@
 ![](Imagenes/Hola.jpg)
 
 ## Código
-```python´´´´
+```python
 # Importacion de las librerias
 import machine
 import ssd1306
@@ -23,3 +23,4 @@ oled.text("Hola Mundo", 0, 0)
 
 # Actualiza la pantalla para mostrar el texto
 oled.show()
+´´´
