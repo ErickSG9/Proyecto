@@ -2,6 +2,7 @@
 # **Sistemas Programables**
 * Profesor: Rene Solis
 * Alumno: Erick Sámano - 20211843
+
 ![](Imagenes/ING.jpg)
 ## Listado de actividades
 >- [Expocision de sensores](servo-motor.md)
