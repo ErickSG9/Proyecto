@@ -3,7 +3,7 @@
 ![](Imagenes/Hola.jpg)
 
 ## Código
-```python
+```python´´´´
 # Importacion de las librerias
 import machine
 import ssd1306
