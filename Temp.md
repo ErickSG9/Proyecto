@@ -1,6 +1,7 @@
 # Temperatura
 
-![](Imagenes/Temp.jpg)
+![](Imagenes/Temp1.png)
+![](Imagenes/Temp2.png)
 
 ## Código
 ```python
