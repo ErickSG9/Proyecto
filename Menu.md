@@ -419,5 +419,4 @@ if __name__ == '__main__':
             elif selectedOp == 3:
                 menuBottom_op3(oled)
         sleep(0.1)
-
-        ```
+```
