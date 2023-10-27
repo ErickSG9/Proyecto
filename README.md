@@ -10,3 +10,4 @@
 >- [Hora actual](Hora.md)
 >- [Temperatura](Temp.md)
 >- [Menu en oled](Menu.md)
+>- [Servidor con pico](Web.md)
