@@ -5,7 +5,6 @@
 ## Código
 
 ```python
-# Importacion de las librerias
 import machine
 import ssd1306
 
@@ -19,7 +18,7 @@ oled = ssd1306.SSD1306_I2C(128, 64, i2c)
 oled.fill(0)
 oled.show()
 
-# Dibuja "Hola Mundo" en la pantalla
+# Imprime texto en oled
 oled.text("Hola Mundo", 0, 0)
 
 # Actualiza la pantalla para mostrar el texto

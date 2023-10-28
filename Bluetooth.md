@@ -4,16 +4,10 @@
 ## Código
 ```python
 #Archivo ble_advertising.py
-# Helpers for generating BLE advertising payloads.
 
 from micropython import const
 import struct
 import bluetooth
-
-# Advertising payloads are repeated packets of the following form:
-#   1 byte data length (N + 1)
-#   1 byte type (see constants below)
-#   N bytes type-specific data
 
 _ADV_TYPE_FLAGS = const(0x01)
 _ADV_TYPE_NAME = const(0x09)
@@ -25,8 +19,6 @@ _ADV_TYPE_UUID32_MORE = const(0x4)
 _ADV_TYPE_UUID128_MORE = const(0x6)
 _ADV_TYPE_APPEARANCE = const(0x19)
 
-
-# Generate a payload to be passed to gap_advertise(adv_data=...).
 def advertising_payload(limited_disc=False, br_edr=False, name=None, services=None, appearance=0):
     payload = bytearray()
 
@@ -52,7 +44,6 @@ def advertising_payload(limited_disc=False, br_edr=False, name=None, services=No
             elif len(b) == 16:
                 _append(_ADV_TYPE_UUID128_COMPLETE, b)
 
-    # See org.bluetooth.characteristic.gap.appearance.xml
     if appearance:
         _append(_ADV_TYPE_APPEARANCE, struct.pack("<h", appearance))
 
@@ -99,8 +90,6 @@ if __name__ == "__main__":
     demo()
 
 #Archivo ble_simple_peripheral.py 
-# This example demonstrates a UART periperhal.
-
 import bluetooth
 import random
 import struct
@@ -145,16 +134,14 @@ class BLESimplePeripheral:
         self._advertise()
 
     def _irq(self, event, data):
-        # Track connections so we can send notifications.
         if event == _IRQ_CENTRAL_CONNECT:
             conn_handle, _, _ = data
-            print("New connection", conn_handle)
+            print("Nueva conexion", conn_handle)
             self._connections.add(conn_handle)
         elif event == _IRQ_CENTRAL_DISCONNECT:
             conn_handle, _, _ = data
-            print("Disconnected", conn_handle)
+            print("Desconectado", conn_handle)
             self._connections.remove(conn_handle)
-            # Start advertising again to allow a new connection.
             self._advertise()
         elif event == _IRQ_GATTS_WRITE:
             conn_handle, value_handle = data
@@ -189,7 +176,6 @@ def demo():
     i = 0
     while True:
         if p.is_connected():
-            # Short burst of queued notifications.
             for _ in range(3):
                 data = str(i) + "_"
                 print("TX", data)
@@ -202,33 +188,22 @@ if __name__ == "__main__":
     demo()
 
 #Archivo main
-# Import necessary modules
 from machine import Pin 
 import bluetooth
 from ble_simple_peripheral import BLESimplePeripheral
 
-# Create a Bluetooth Low Energy (BLE) object
 ble = bluetooth.BLE()
-
-# Create an instance of the BLESimplePeripheral class with the BLE object
 sp = BLESimplePeripheral(ble)
-
-# Create a Pin object for the onboard LED, configure it as an output
 led = Pin("LED", Pin.OUT)
-
-# Initialize the LED state to 0 (off)
 led_state = 0
 
-# Define a callback function to handle received data
 def on_rx(data):
-    print("Data received: ", data)  # Print the received data
-    global led_state  # Access the global variable led_state
-    if data == b'toggle\r\n':  # Check if the received data is "toggle"
-        led.value(not led_state)  # Toggle the LED state (on/off)
-        led_state = 1 - led_state  # Update the LED state
-
-# Start an infinite loop
+    print("Data received: ", data)  
+    global led_state  
+    if data == b'toggle\r\n': 
+        led.value(not led_state)  
+        led_state = 1 - led_state  
 while True:
-    if sp.is_connected():  # Check if a BLE connection is established
-        sp.on_write(on_rx)  # Set the callback function for data reception
+    if sp.is_connected():  
+        sp.on_write(on_rx)  
 ```
